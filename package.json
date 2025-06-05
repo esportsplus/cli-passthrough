@@ -2,7 +2,7 @@
     "author": "ICJR",
     "devDependencies": {
         "@esportsplus/typescript": "^0.8.10",
-        "@types/node": "^22.15.29"
+        "@types/node": "^22.15.30"
     },
     "main": "build/index.js",
     "name": "@esportsplus/cli-passthrough",
