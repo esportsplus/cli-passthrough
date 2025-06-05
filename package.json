@@ -10,8 +10,8 @@
     "scripts": {
         "build": "tsc",
         "-": "-",
-        "prepare": "npm run build",
-        "prepublishOnly": "npm run build"
+        "prepare": "pnpm build",
+        "prepublishOnly": "pnpm build"
     },
     "type": "module",
     "types": "build/index.d.ts",
