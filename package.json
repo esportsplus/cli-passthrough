@@ -1,0 +1,19 @@
+{
+    "author": "ICJR",
+    "devDependencies": {
+        "@esportsplus/typescript": "^0.8.10",
+        "@types/node": "^22.15.29"
+    },
+    "main": "build/index.js",
+    "name": "@esportsplus/cli-passthrough",
+    "private": false,
+    "scripts": {
+        "build": "tsc",
+        "-": "-",
+        "prepare": "npm run build",
+        "prepublishOnly": "npm run build"
+    },
+    "type": "module",
+    "types": "build/index.d.ts",
+    "version": "0.0.1"
+}
