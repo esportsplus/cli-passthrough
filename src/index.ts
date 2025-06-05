@@ -4,9 +4,10 @@ import path from 'node:path';
 
 
 export default (script: string) => {
-    let dir = path.resolve(__dirname, '../');
+    let dir = path.resolve(import.meta.url, '../'),
+        root = path.parse(dir).root;
 
-    while (dir !== path.parse(dir).root) {
+    while (dir !== root) {
         let filepath = path.resolve(dir, `node_modules/.bin/${script}`);
 
         if (fs.existsSync(filepath)) {
