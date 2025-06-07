@@ -1,4 +1,4 @@
-import { execFile } from 'child_process';
+import { spawn } from 'child_process';
 import { fileURLToPath } from 'url';
 import fs from 'fs';
 import path from 'path';
@@ -13,7 +13,11 @@ export default (script: string) => {
         let filepath = path.resolve(dir, `node_modules/.bin/${script}`);
 
         if (fs.existsSync(filepath)) {
-            return execFile(filepath, process.argv.slice(2));
+            let args = process.argv.slice(2)
+                .map(v => `"${v.replace(/"/g, '\\"')}"`)
+                .join(' ');
+
+            return spawn(`${filepath} ${args}`, { shell: true, stdio: 'inherit' });
         }
 
         dir = path.dirname(dir);
