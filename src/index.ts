@@ -1,4 +1,4 @@
-import { spawn } from 'child_process';
+import { execFile } from 'child_process';
 import { fileURLToPath } from 'url';
 import fs from 'fs';
 import path from 'path';
@@ -13,7 +13,7 @@ export default (script: string) => {
         let filepath = path.resolve(dir, `node_modules/.bin/${script}`);
 
         if (fs.existsSync(filepath)) {
-            return spawn(filepath, process.argv.slice(2), { stdio: 'inherit' });
+            return execFile(filepath, process.argv.slice(2));
         }
 
         dir = path.dirname(dir);
