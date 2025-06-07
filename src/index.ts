@@ -13,7 +13,7 @@ export default (script: string) => {
         let filepath = path.resolve(dir, `node_modules/.bin/${script}`);
 
         if (fs.existsSync(filepath)) {
-            return spawn(filepath, process.argv.slice(2), { shell: true, stdio: 'inherit' });
+            return spawn(filepath, process.argv.slice(2), { stdio: 'inherit' });
         }
 
         dir = path.dirname(dir);
