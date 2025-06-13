@@ -9,16 +9,19 @@ importers:
   .:
     devDependencies:
       '@esportsplus/typescript':
-        specifier: ^0.8.10
-        version: 0.8.10
+        specifier: ^0.8.14
+        version: 0.8.14
       '@types/node':
-        specifier: ^22.15.30
-        version: 22.15.30
+        specifier: ^24.0.1
+        version: 24.0.1
 
 packages:
 
-  '@esportsplus/typescript@0.8.10':
-    resolution: {integrity: sha512-rxkeD4MSE5cFU9XdwtktObK6SsoV9Tp+hWwZ+muXfPQmEIxURnwYEw5J9hfnBKxEzgn/dpTQjWJgEjslNps6UA==}
+  '@esportsplus/cli-passthrough@0.0.10':
+    resolution: {integrity: sha512-/DcLjDxIB9NponyFtMQ3ICCXUA/hH1hp4FaL6AOepG1TwvY8g9y1MVLM71Coq7e0NpxUZt1pg73z6KSrh3Xd0w==}
+
+  '@esportsplus/typescript@0.8.14':
+    resolution: {integrity: sha512-BnoclJMbwhIN7/vCn+w7vBGJVrWD7MBHhh9XvUiaoPc+XiJA9ZW9uRmjbmBgUAi4z4k4Qa6oil4h6E2H1jBDEQ==}
     hasBin: true
 
   '@nodelib/fs.scandir@2.1.5':
@@ -33,8 +36,8 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
-  '@types/node@22.15.30':
-    resolution: {integrity: sha512-6Q7lr06bEHdlfplU6YRbgG1SFBdlsfNC4/lX+SkhiTs0cpJkOElmWls8PxDFv4yY/xKb8Y6SO0OmSX4wgqTZbA==}
+  '@types/node@24.0.1':
+    resolution: {integrity: sha512-MX4Zioh39chHlDJbKmEgydJDS3tspMP/lnQC67G3SWsTnb9NeYVWOjkxpOSy4oMfPs4StcWHwBrvUb4ybfnuaw==}
 
   anymatch@3.1.3:
     resolution: {integrity: sha512-KMReFUr0B4t+D+OBkjR3KYqvocp2XaSzO55UcB6mgQMd3KbcE+mWTyvVV7D/zsdEbNnV6acZUutkiHQXvTr1Rw==}
@@ -178,13 +181,16 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
-  undici-types@6.21.0:
-    resolution: {integrity: sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ==}
+  undici-types@7.8.0:
+    resolution: {integrity: sha512-9UJ2xGDvQ43tYyVMpuHlsgApydB8ZKfVYTsLDhXkFL/6gfkp+U8xTGdh8pMJv1SpZna0zxG1DwsKZsreLbXBxw==}
 
 snapshots:
 
-  '@esportsplus/typescript@0.8.10':
+  '@esportsplus/cli-passthrough@0.0.10': {}
+
+  '@esportsplus/typescript@0.8.14':
     dependencies:
+      '@esportsplus/cli-passthrough': 0.0.10
       tsc-alias: 1.8.16
       typescript: 5.8.3
 
@@ -200,9 +206,9 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.19.1
 
-  '@types/node@22.15.30':
+  '@types/node@24.0.1':
     dependencies:
-      undici-types: 6.21.0
+      undici-types: 7.8.0
 
   anymatch@3.1.3:
     dependencies:
@@ -338,4 +344,4 @@ snapshots:
 
   typescript@5.8.3: {}
 
-  undici-types@6.21.0: {}
+  undici-types@7.8.0: {}
