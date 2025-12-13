@@ -7,6 +7,10 @@
     "main": "build/index.js",
     "name": "@esportsplus/cli-passthrough",
     "private": false,
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/esportsplus/cli-passthrough"
+    },
     "scripts": {
         "build": "tsc",
         "-": "-",
