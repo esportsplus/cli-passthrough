@@ -4,7 +4,14 @@ import fs from 'fs';
 import path from 'path';
 
 
+const SCRIPT_NAME = /^[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)*$/;
+
+
 export default (script: string) => {
+    if (!SCRIPT_NAME.test(script)) {
+        throw new Error(`@esportsplus/cli-passthrough: invalid script name '${script}'`);
+    }
+
     let dir = path.resolve(fileURLToPath(import.meta.url), '../'),
         i = 0,
         root = path.parse(dir).root;
@@ -13,11 +20,7 @@ export default (script: string) => {
         let filepath = path.resolve(dir, `node_modules/.bin/${script}`);
 
         if (fs.existsSync(filepath)) {
-            let args = process.argv.slice(2)
-                .map(v => `"${v.replace(/"/g, '\\"')}"`)
-                .join(' ');
-
-            return spawn(`${filepath} ${args}`, { shell: true, stdio: 'inherit' });
+            return spawn(filepath, process.argv.slice(2), { shell: true, stdio: 'inherit' });
         }
 
         dir = path.dirname(dir);
