@@ -12,9 +12,7 @@
         "url": "https://github.com/esportsplus/cli-passthrough"
     },
     "scripts": {
-        "build": "tsc",
-        "-": "-",
-        "prepare": "pnpm build",
+        "build": "tsc -p tsconfig.build.json",
         "prepublishOnly": "pnpm build"
     },
     "type": "module",
