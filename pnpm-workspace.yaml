@@ -1,2 +1,3 @@
 minimumReleaseAgeExclude:
+  - '@esportsplus/typescript@0.34.0'
   - '@esportsplus/typescript@0.33.4'
